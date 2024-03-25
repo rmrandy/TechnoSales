@@ -1,4 +1,7 @@
 import React from "react";
+import Facebook from "./assets/icons/Face.png"
+import Google from "./assets/icons/Google.png"
+import LinkedIn from "./assets/icons/Linked.png"
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
@@ -35,13 +38,13 @@ function SignUpForm() {
         <h1>Crear Cuenta</h1>
         <div className="social-container">
           <a href="facebook.com" className="social">
-            <i className="fab fa-facebook-f" />
+          <img src={Facebook} alt="Facebook" />
           </a>
           <a href="gmail.com" className="social">
-            <i className="fab fa-google-plus-g" />
+          <img src={Google} alt="Facebook" />
           </a>
           <a href="linkedin.com" className="social">
-            <i className="fab fa-linkedin-in" />
+          <img src={LinkedIn} alt="Facebook" />
           </a>
         </div>
         <span>Puedes usar tu e-mail para registrarte</span>

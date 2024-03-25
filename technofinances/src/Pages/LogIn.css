@@ -255,3 +255,9 @@
     text-decoration: none;
   }
   
+
+  .social-container a img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho de su contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen ajustando su altura automáticamente */
+    border-radius: 50%; /* Opcional: Esto asegura que si el círculo no es perfecto debido a la imagen, ésta también se vea como un círculo */
+}

@@ -1,4 +1,7 @@
 import React from "react";
+import Facebook from "../assets/icons/Face.png"
+import Google from "../assets/icons/Google.png"
+import LinkedIn from "../assets/icons/Linked.png"
 function SignInForm() {
   const [state, setState] = React.useState({
     email: "",
@@ -32,16 +35,16 @@ function SignInForm() {
         <h1>Iniciar Sesión </h1>
         <div className="social-container">
           <a href="facebook.com" className="social">
-            <i className="fab fa-facebook-f" />
+          <img src={Facebook} alt="Facebook" />
           </a>
           <a href="google.com" className="social">
-            <i className="fab fa-google-plus-g" />
+          <img src={Google} alt="Google" />
           </a>
           <a href="linkedin.com" className="social">
-            <i className="fab fa-linkedin-in" />
+          <img src={LinkedIn} alt="LinkedIn" />
           </a>
         </div>
-        <span>También peudes iniciar sesión con tu cuenta  de correo electrónico</span>
+        <span>También puedes iniciar sesión con tu cuenta  de correo electrónico</span>
         <input
           type="email"
           placeholder="Correo Electronico"
