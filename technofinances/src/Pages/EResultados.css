@@ -36,4 +36,67 @@
       border-radius: 10px;
       
   }
+
+
+.detalle-ingresos {
+    color: green; 
+    
+  }
+  
+  
+  .detalle-gastos {
+    color: red; 
+    
+  }
+  .excel-table-container {
+    overflow-x: auto; 
+  }
+  
+  .excel-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+    overflow: hidden; 
+  }
+  .excel-table-container {
+    overflow-x: auto;
+    padding: 20px; 
+    border-radius: 8px; 
+    
+  }
+  
+  .excel-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden; 
+    background-color: #ffffff; 
+  }
+  
+  .excel-table-container th, .excel-table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+  
+  .excel-table-container th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .excel-table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .excel-table-container tr:hover {
+    background-color: #ddd;
+  }
+  
+  .excel-table-container td {
+    font-size: 14px;
+  }
   

@@ -21,7 +21,7 @@ export default function LogIn() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Bienvenido de Nuevo</h1>
+              <h1>Este es el dash</h1>
               <p>
                 para iniciar sesión puedes iniciar sesión con tu correo electronico. 
               </p>
