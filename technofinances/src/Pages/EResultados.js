@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./EResultados.css";
+import ChatComponent from "../Componentes/ChatComponent";
 import datos from "../DATA/gastos.json";
 import * as XLSX from "xlsx";
 import { Column } from "@ant-design/plots";
-
 
 function useSlotMachineEffect(finalValue, duration = 2000) {
   const [value, setValue] = useState(0);
@@ -29,13 +29,14 @@ function useSlotMachineEffect(finalValue, duration = 2000) {
 function EResultados() {
   const chartRef = useRef();
   const [excelData, setExcelData] = useState([]);
-  const animatedIngresos = useSlotMachineEffect(85000, 3000);
-  const animatedGastos = useSlotMachineEffect(15000, 3000);
+  const animatedIngresos = useSlotMachineEffect(100000, 3000);
+  const animatedGastos = useSlotMachineEffect(22000, 3000);
+  const [messages, setMessages] = useState([]);
+  const [currentMessage, setCurrentMessage] = useState("");
 
-  
   const animateExcelData = (finalData) => {
     let frameId;
-    const duration = 3000; 
+    const duration = 3000;
     const startTime = Date.now();
 
     const animate = () => {
@@ -43,11 +44,12 @@ function EResultados() {
       const elapsedTime = now - startTime;
       const progress = Math.min(elapsedTime / duration, 1);
 
-      const currentData = finalData.map(row => {
+      const currentData = finalData.map((row) => {
         const currentRow = {};
-        Object.keys(row).forEach(key => {
+        Object.keys(row).forEach((key) => {
           const value = row[key];
-          currentRow[key] = typeof value === 'number' ? Math.floor(value * progress) : value;
+          currentRow[key] =
+            typeof value === "number" ? Math.floor(value * progress) : value;
         });
         return currentRow;
       });
@@ -65,18 +67,29 @@ function EResultados() {
     };
   };
 
-  
+  useEffect(() => {
+    const filePath = `${process.env.PUBLIC_URL}/Estado_de_Resultados.xlsx`;
+    fetch(filePath)
+      .then((res) => res.arrayBuffer())
+      .then((buffer) => {
+        const wb = XLSX.read(buffer, { type: "buffer" });
+        const sheetName = wb.SheetNames[0];
+        const sheet = wb.Sheets[sheetName];
+        const finalData = XLSX.utils.sheet_to_json(sheet);
+        animateExcelData(finalData);
+      });
+  }, []);
 
   useEffect(() => {
     const filePath = `${process.env.PUBLIC_URL}/Estado_de_Resultados.xlsx`;
     fetch(filePath)
-      .then(res => res.arrayBuffer())
-      .then(buffer => {
-        const wb = XLSX.read(buffer, {type: "buffer"});
+      .then((res) => res.arrayBuffer())
+      .then((buffer) => {
+        const wb = XLSX.read(buffer, { type: "buffer" });
         const sheetName = wb.SheetNames[0];
         const sheet = wb.Sheets[sheetName];
-        const finalData = XLSX.utils.sheet_to_json(sheet, {header: 1});
-        animateExcelData(finalData); 
+        const data = XLSX.utils.sheet_to_json(sheet, { raw: true });
+        setExcelData(data);
       });
   }, []);
 
@@ -84,15 +97,28 @@ function EResultados() {
     data: datos,
     xField: "Día",
     yField: "Gastos",
-    slider: {
-      start: 0.1,
-      end: 0.2,
-    },
+
+    interactions: [
+      {
+        type: "slider",
+        cfg: {
+          start: 0,
+          end: 1,
+        },
+      },
+    ],
+  };
+
+  const sendMessage = () => {
+    if (!currentMessage.trim()) return;
+
+    setMessages([...messages, { id: Date.now(), text: currentMessage }]);
+    setCurrentMessage("");
   };
 
   return (
     <div className="financial-statement">
-       <div className="titulos">
+      <div className="titulos">
         <h1>Resultado Financiero</h1>
         <div className="detalle-ingresos">
           Ingresos Totales: ${animatedIngresos.toLocaleString()}
@@ -108,18 +134,27 @@ function EResultados() {
         <table>
           <thead>
             <tr>
-              {excelData.length > 0 && Object.keys(excelData[0]).map(key => <th key={key}>{key}</th>)}
+              {excelData.length > 0 &&
+                Object.keys(excelData[0]).map((key) => (
+                  <th key={key}>{key}</th>
+                ))}
             </tr>
           </thead>
           <tbody>
             {excelData.map((row, index) => (
               <tr key={index}>
-                {Object.values(row).map((val, i) => <td key={i}>{typeof val === 'number' ? val.toLocaleString() : val}</td>)}
+                {Object.values(row).map((val, i) => (
+                  <td key={i}>
+                    {typeof val === "number" ? val.toLocaleString() : val}
+                  </td>
+                ))}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      <h2>Realiza tus preguntas aquí</h2>
+      <ChatComponent />
     </div>
   );
 }

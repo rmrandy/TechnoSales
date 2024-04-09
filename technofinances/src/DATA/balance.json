@@ -1,0 +1,23 @@
+{
+    "activos": [
+      { "tipo": "Efectivo", "valor": 12000 },
+      { "tipo": "Cuentas por cobrar", "valor": 8000 },
+      { "tipo": "Inventarios", "valor": 15000 },
+      { "tipo": "Prepagos", "valor": 2000 },
+      { "tipo": "Equipos", "valor": 30000 },
+      { "tipo": "Edificios", "valor": 50000 },
+      { "tipo": "Terrenos", "valor": 25000 }
+    ],
+    "pasivos": [
+      { "tipo": "Cuentas por pagar", "valor": 7000 },
+      { "tipo": "Préstamos a corto plazo", "valor": 10000 },
+      { "tipo": "Préstamos a largo plazo", "valor": 40000 },
+      { "tipo": "Obligaciones por arrendamiento", "valor": 12000 }
+    ],
+    "patrimonio": [
+      { "tipo": "Capital emitido", "valor": 30000 },
+      { "tipo": "Utilidades retenidas", "valor": 28000 },
+      { "tipo": "Acciones propias", "valor": -2000 }
+    ]
+  }
+  

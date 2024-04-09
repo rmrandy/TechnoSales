@@ -7,9 +7,9 @@ import financialReportingIcon from "../assets/icons/financial-reporting.png";
 import estadoResultados from "../assets/icons/EstadoResultados.png";
 import tranferencia from "../assets/icons/Transferencia.png";
 import balance from "../assets/icons/BalanceGeneral.png";
-import jhon from "../assets/icons/JhonDoe.png"
-import jhona from  "../assets/icons/Jhonaaaa.png"
-import miguel from  "../assets/icons/lola.png"
+import jhon from "../assets/icons/JhonDoe.png";
+import jhona from "../assets/icons/Jhonaaaa.png";
+import miguel from "../assets/icons/lola.png";
 
 function Inicio() {
   const navigate = useNavigate();
@@ -22,24 +22,23 @@ function Inicio() {
       id: 0,
       nombre: "John Doe",
       testimonio:
-        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ",
-      imagen: jhon
-    } ,
+      "La claridad y la facilidad de uso del dashboard de TechnoNumbers han revolucionizado la manera en que manejo las finanzas de mi empresa. Es como tener un contador personal en mi equipo.",
+      imagen: jhon,
+    },
     {
       id: 0,
       nombre: "Jane Doe",
       testimonio:
-        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi",
-      imagen: jhona
+      "El detalle y precisión de los informes me permiten tomar decisiones con la confianza de tener la información correcta. Es una herramienta imprescindible para mi negocio.",
+      imagen: jhona,
     },
     {
       id: 0,
       nombre: "Mike Doe",
       testimonio:
-        "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi",
-      imagen: miguel
-    }
-     
+      "Con la sección de transferencias he podido reducir significativamente el tiempo que dedico a la gestión bancaria. Es eficiente, seguro y sorprendentemente fácil de usar.",
+      imagen: miguel,
+    },
   ];
 
   return (
@@ -90,10 +89,11 @@ function Inicio() {
           <div className="financial-statement-text">
             <h2>Estado de Resultados</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi
+              Entienda cómo fluyen sus ingresos y gastos con nuestro detallado
+              estado de resultados. Esta herramienta es esencial para medir la
+              eficacia operativa de su empresa, presentando claramente sus
+              ingresos, costos, gastos operacionales y la rentabilidad neta
+              durante un periodo específico.
             </p>
           </div>
         </div>
@@ -108,10 +108,11 @@ function Inicio() {
           <div className="transferencia-statement-text">
             <h2>Transferencias Moviles</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi
+              Administre sus movimientos de fondos eficientemente. Nuestra
+              sección de transferencias le permite visualizar, planificar y
+              ejecutar transacciones, tanto entrantes como salientes, con
+              facilidad y seguridad. Mantenga un control efectivo sobre el flujo
+              de efectivo y optimice la gestión de su capital de trabajo.
             </p>
           </div>
         </div>
@@ -126,10 +127,10 @@ function Inicio() {
           <div className="transferencia-statement-text">
             <h2>Calculo de Balance General</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi
+              Una visión integral de la salud financiera de su negocio. Nuestro
+              balance general muestra de manera precisa sus activos, pasivos y
+              patrimonio neto. Realice un seguimiento de los recursos que posee,
+              lo que debe y el valor real de su empresa en un solo vistazo.
             </p>
           </div>
         </div>

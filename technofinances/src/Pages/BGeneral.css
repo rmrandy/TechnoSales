@@ -1,0 +1,108 @@
+.financial-report-container {
+    max-width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .pie-chart {
+    width: 45%;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  .pie-chart#income-chart {
+    
+  }
+  
+  .pie-chart#expenses-chart {
+    
+  }
+  
+  .financial-table {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    
+  }
+  
+  .chatbox-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .chatbox-container input {
+    flex-grow: 1;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  
+  .chatbox-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .financial-report-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .charts-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .additional-info {
+    flex: 1;
+    
+  }
+  
+
+  .financial-report-container {
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .financial-table th, .financial-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .financial-table .table-section-header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
