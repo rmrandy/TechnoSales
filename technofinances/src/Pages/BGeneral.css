@@ -1,7 +1,6 @@
 .financial-report-container {
     max-width: 100%;
-    max-width: 1200px;
-    margin: auto;
+    
     padding: 20px;
     background-color: #ffffff;
     border-radius: 15px;
@@ -11,6 +10,7 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+
   }
   
   .pie-chart {
@@ -24,13 +24,7 @@
     border-radius: 8px;
   }
   
-  .pie-chart#income-chart {
-    
-  }
-  
-  .pie-chart#expenses-chart {
-    
-  }
+
   
   .financial-table {
     background-color: #fff;

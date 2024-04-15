@@ -1,0 +1,59 @@
+.debt-management-container {
+    max-width: 90%; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #f7f7f7; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .debt-management-container h1 {
+    text-align: center; 
+    color: #333; 
+  }
+  
+  .debt-management-container p {
+    text-align: center; 
+    font-size: 1.2rem;
+    margin-bottom: 20px; 
+    font-weight: bold; 
+  }
+  
+  .debt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; 
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #eaeaea; 
+    border-radius: 5px; 
+  }
+  
+  .debt-item span {
+    font-size: 1rem;
+    max-width: 200px;
+  }
+  
+  .debt-item input {
+    margin-right: 10px; 
+    padding: 5px;
+    border: 1px solid #eaeaea; 
+    border-radius: 5px; 
+    max-width: 700px;
+  }
+  
+  .debt-item button {
+    padding: 5px;
+    background-color: #5cb85c; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .debt-item button:hover {
+    background-color: #4cae4c; 
+  }
+  

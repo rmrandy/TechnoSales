@@ -17,9 +17,7 @@ const FinancialReport = () => {
     interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
 
-  const handleSendMessage = (message) => {
-    console.log(message);
-  };
+
 
   if (!balanceData.activos || !balanceData.pasivos) {
     return <div>Cargando...</div>;

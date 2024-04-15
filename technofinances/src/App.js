@@ -7,6 +7,7 @@ import LogIn from "./Pages/LogIn";
 import Layout from './Layout'; 
 import Dash from "./Pages/Dash"
 import BGeneral from "./Pages/BGeneral"
+import Transacciones from "./Pages/Transacciones";
  
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
         <Route path="/login" element={<Layout><LogIn /></Layout>} />
         <Route path='/dash' element={<Layout><Dash /></Layout>}/>
         <Route path='/BalanceGeneral' element={<Layout><BGeneral /></Layout>}/>
+        <Route path='/Transacciones' element={<Layout><Transacciones /></Layout>}/>
       </Routes>
     </Router>
   );
 }
 
 export default App;
- 
+  
