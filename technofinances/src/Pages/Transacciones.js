@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Pie } from '@ant-design/plots';
-import './Transacciones.css'; 
+import './Transacciones.css';
 
 const initialDebts = [
   { tipo: "Cuentas por pagar", valor: 7000 },
@@ -46,23 +46,28 @@ const DebtManagement = () => {
     setDebts(updatedDebts);
   };
 
+  const filteredDebts = debts.filter(debt => debt.valor > 0);
+  console.log('Datos filtrados para el gráfico de pastel:', filteredDebts);
+
   const pieConfig = {
     appendPadding: 10,
-    data: debts.filter(debt => debt.valor > 0),  
+    data: filteredDebts,
     angleField: 'valor',
     colorField: 'tipo',
     color: ['#ffffff', '#3498db', '#9b59b6', '#f39c12', '#d35400'],
     radius: 0.8,
     label: {
-      type: 'outer',
-      content: ({ data }) => `${data.tipo}: $${data.valor.toLocaleString()}`,
+      layout: ['outer', 'slice', 'adjust-color'],
+      content: ({ data }) => {
+        if (data && 'tipo' in data && typeof data.tipo === 'string' && 
+            'valor' in data && typeof data.valor === 'number') {
+          return `${data.tipo}: $${data.valor.toLocaleString()}`;
+        }
+        return ''; 
+      },
     },
     interactions: [{ type: 'element-active' }],
   };
-
-  if (!debts.length) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="debt-management-container">
