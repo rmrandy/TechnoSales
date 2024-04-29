@@ -1,6 +1,12 @@
+  body {
+    background-image:url(../assets/mountain.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 .dashboard-container {
     padding: 2rem;
-    background: #f4f7fa;
+    background-color: rgba(0,0,0,0);
   }
   
   .dashboard-header {
@@ -15,14 +21,20 @@
   }
   
   .dashboard-card {
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+    background-color:#ffffff;
+    border-radius: 40px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity:0.95;
+    font-size: 20px;
+  }
+  .dashboard-card:hover {
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
   }
   
   .dashboard-card h3 {
@@ -53,10 +65,6 @@
   .fas.fa-user {
     
   }
-  .dashboard-container {
-    padding: 20px;
-    background-color: #f4f4f4; 
-  }
   
   .dashboard-header {
     margin-bottom: 20px;
@@ -68,7 +76,7 @@
   }
   
   .dashboard-card {
-    border: 2px solid #dcdcdc; 
+    /*border: 2px solid #dcdcdc;*/
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -92,16 +100,19 @@
     flex: 1; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px;
+    margin: 10px; 
+    opacity:0.9;
   }
   
-  
-  
+  .financial-summary-card:hover { 
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+  }
   
   .financial-summary-card h2 {
     margin-bottom: 15px;

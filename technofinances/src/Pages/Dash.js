@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { Link } from 'react-router-dom';
 
 
+
 const financialStatusData = [
   { name: "Ingresos", value: 400, color: "#00C49F" },
   { name: "Gastos", value: 300, color: "#FF8042" },
@@ -57,7 +58,6 @@ const DashboardContent = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <h1>Dashboard Financiero</h1>
       </div>
       <div className="dashboard-cards">
         {renderPieChart(financialStatusData, "Estado de Resultados", "#00C49F")}

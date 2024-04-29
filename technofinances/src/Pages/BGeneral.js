@@ -10,10 +10,10 @@ const FinancialReport = () => {
     angleField: "valor",
     colorField: "tipo",
     radius: 0.9,
-    label: {
-      type: "inner",
-      content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
-    },
+    //label: {
+      //type: "none",
+      //content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
+    //},
     interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
 
@@ -47,7 +47,7 @@ const FinancialReport = () => {
         )}
       </div>
       <div className="financial-report-container">
-        <h1>Resultado Financiero</h1>
+        <h1 id="resultadoFinanciero" >Resultado Financiero</h1>
         <table className="financial-table">
           <thead>
             <tr>

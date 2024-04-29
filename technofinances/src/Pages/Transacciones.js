@@ -56,16 +56,16 @@ const DebtManagement = () => {
     colorField: 'tipo',
     color: ['#ffffff', '#3498db', '#9b59b6', '#f39c12', '#d35400'],
     radius: 0.8,
-    label: {
+    //label: {
       layout: ['outer', 'slice', 'adjust-color'],
       content: ({ data }) => {
         if (data && 'tipo' in data && typeof data.tipo === 'string' && 
             'valor' in data && typeof data.valor === 'number') {
-          return `${data.tipo}: $${data.valor.toLocaleString()}`;
+           return `${data.tipo}: $${data.valor.toLocaleString()}`;
         }
         return ''; 
       },
-    },
+    //},
     interactions: [{ type: 'element-active' }],
   };
 
