@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: rgba(0,0,0,0.8);
   }
   
   .loader-circle, .loader-line-mask {
@@ -16,7 +16,7 @@
   
   .loader-circle {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background-color: #5589ac; 
+    background-color: white; 
     animation: rotate 2s linear infinite;
   }
   
@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 10px solid #c26c6c;
+    border: 10px solid black;
     animation: dash 1.5s ease-in-out infinite;
   }
   
@@ -52,7 +52,7 @@
   
   .loader-container p {
     margin-top: 20px;
-    color: #440808;
+    color: black;
     font-size: 1rem;
   }
   

@@ -48,10 +48,6 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
-    background-color: #blue;
-  }
-  
   @media (max-width: 768px) {
     .features {
       flex-direction: column;
@@ -258,7 +254,8 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: black;
+    color:white;
     transform: scale(1.007);
   }
   
