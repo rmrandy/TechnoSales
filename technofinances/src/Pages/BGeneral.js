@@ -77,7 +77,6 @@ const FinancialReport = () => {
           </tbody>
         </table>
       </div>
-      <ChatComponent />
     </div>
   );
 };
