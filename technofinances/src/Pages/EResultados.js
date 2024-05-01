@@ -68,7 +68,7 @@ function EResultados() {
   };
 
   useEffect(() => {
-    const filePath = `${process.env.PUBLIC_URL}/Estado_de_Resultados.txt`;
+    const filePath = `${process.env.PUBLIC_URL}/Estado_de_Resultados.xlsx`;
     fetch(filePath)
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
