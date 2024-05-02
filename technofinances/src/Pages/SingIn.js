@@ -13,13 +13,13 @@ function SignInForm({ defaultEmail = "", defaultPassword = "" }) {
     password: "",
   });
 
-  const handleChange = (evt) => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value,
-    });
-  };
+  //const handleChange = (evt) => {
+    //const value = evt.target.value;
+    //setState({
+      //...state,
+      //[evt.target.name]: value,
+    //});
+  //};
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
