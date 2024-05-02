@@ -3,7 +3,7 @@ import './EResultados.css';
 import { Pie } from '@ant-design/plots';
 
 function EResultados() {
-  const [excelData, setExcelData] = useState([
+  const [excelData] = useState([
     { Concepto: "Ventas", Monto: 100000 }, // Considerado como ingreso
     { Concepto: "Costo de Ventas", Monto: 15000 },
     { Concepto: "Ganancia Bruta", Monto: 85000 },
