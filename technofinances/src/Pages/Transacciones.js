@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Pie } from '@ant-design/plots';
 import './Transacciones.css';
 
@@ -10,8 +10,17 @@ const initialDebts = [
 ];
 
 const DebtManagement = () => {
-  const [debts, setDebts] = useState(initialDebts);
-  const [availableFunds, setAvailableFunds] = useState(78000);
+  const defaultFunds = 78000; // Nuevo saldo disponible por defecto
+  const [debts, setDebts] = useState(() => JSON.parse(localStorage.getItem('debts')) || initialDebts);
+  const [availableFunds, setAvailableFunds] = useState(() => {
+    const storedFunds = Number(localStorage.getItem('availableFunds'));
+    return isNaN(storedFunds) ? defaultFunds : storedFunds;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('debts', JSON.stringify(debts));
+    localStorage.setItem('availableFunds', availableFunds.toString());
+  }, [debts, availableFunds]);
 
   const handlePayment = (index, paymentAmount) => {
     if (paymentAmount <= availableFunds && paymentAmount > 0) {
@@ -47,25 +56,13 @@ const DebtManagement = () => {
   };
 
   const filteredDebts = debts.filter(debt => debt.valor > 0);
-  console.log('Datos filtrados para el gráfico de pastel:', filteredDebts);
 
   const pieConfig = {
     appendPadding: 10,
     data: filteredDebts,
     angleField: 'valor',
     colorField: 'tipo',
-    color: ['#ffffff', '#3498db', '#9b59b6', '#f39c12', '#d35400'],
     radius: 0.8,
-    //label: {
-      layout: ['outer', 'slice', 'adjust-color'],
-      content: ({ data }) => {
-        if (data && 'tipo' in data && typeof data.tipo === 'string' && 
-            'valor' in data && typeof data.valor === 'number') {
-           return `${data.tipo}: $${data.valor.toLocaleString()}`;
-        }
-        return ''; 
-      },
-    //},
     interactions: [{ type: 'element-active' }],
   };
 
