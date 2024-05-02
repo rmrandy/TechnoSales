@@ -115,7 +115,7 @@ function EResultados() {
     setMessages([...messages, { id: Date.now(), text: currentMessage }]);
     setCurrentMessage("");
   };
-  console.log(sendMessages);
+  console.log(sendMessage);
 
   return (
     <div className="financial-statement">
