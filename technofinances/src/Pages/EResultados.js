@@ -153,6 +153,7 @@ function EResultados() {
           </tbody>
         </table>
       </div>
+      <ChatComponent/>
     </div>
   );
 }
