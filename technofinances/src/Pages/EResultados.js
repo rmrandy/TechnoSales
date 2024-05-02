@@ -109,12 +109,13 @@ function EResultados() {
     ],
   };
 
-  //const sendMessage = () => {
-    //if (!currentMessage.trim()) return;
+  const sendMessage = () => {
+    if (!currentMessage.trim()) return;
 
-    //setMessages([...messages, { id: Date.now(), text: currentMessage }]);
-    //setCurrentMessage("");
-  //};
+    setMessages([...messages, { id: Date.now(), text: currentMessage }]);
+    setCurrentMessage("");
+  };
+  console.log(sendMesasage);
 
   return (
     <div className="financial-statement">
