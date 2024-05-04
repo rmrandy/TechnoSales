@@ -20,7 +20,7 @@ function Inicio() {
   const testimonios = [
     {
       id: 0,
-      nombre: "John Doe",
+      nombre: "Juan Doe",
       testimonio:
       "La claridad y la facilidad de uso del dashboard de TechnoNumbers han revolucionizado la manera en que manejo las finanzas de mi empresa. Es como tener un contador personal en mi equipo.",
       imagen: jhon,
