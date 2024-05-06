@@ -28,22 +28,26 @@ pipeline {
         }
         stage("Deploy Stage"){
             steps {
-                sh '''
-                cd TechnoSales/technofinances/
-                git config --global user.email "pablopolis2016@gmail.com"
-                git config --global user.name "Pablo Flores M"
-                echo $(git status)
-                if [ -z "$(git status --porcelain)" ]; then
-                echo "The working tree is clean."
-                else
-                git add -f build/
-                git commit -m "new build"
-                git push -u https://rmrandy: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@github.com/rmrandy/TechnoSales.git main 
-                fi
-
-                '''
+                withCredentials([usernamePassword(credentialsId: '6536388d-e6b4-419e-a0e9-b14645244769', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]){ 
+                    script {
+                        // URL encode the password in case it contains special characters
+                        env.GIT_PASSWORD = URLEncoder.encode(env.GIT_PASSWORD, "UTF-8")
+                    }
+                    sh '''
+                    cd TechnoSales/technofinances/
+                    git config --global user.email "pablopolis2016@gmail.com"
+                    git config --global user.name "Pablo Flores M"
+                    echo $(git status)
+                    if [ -z "$(git status --porcelain)" ]; then
+                        echo "The working tree is clean."
+                    else
+                        git add -f build/
+                        git commit -m "this is a new build"
+                        git push -u https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/rmrandy/TechnoSales.git main 
+                    fi
+                    '''
+                }
             }
         }
     }
 }
-
