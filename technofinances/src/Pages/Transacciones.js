@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Pie } from '@ant-design/plots';
 import './Transacciones.css';
+import initialDebts from "../DATA/transacciones.json";
+import balanceData from "../DATA/balance.json";
 
-const initialDebts = [
-  { tipo: "Cuentas por pagar", valor: 7000 },
-  { tipo: "Préstamos a corto plazo", valor: 10000 },
-  { tipo: "Préstamos a largo plazo", valor: 40000 },
-  { tipo: "Obligaciones por arrendamiento", valor: 12000 }
-];
 
-const DebtManagement = () => {
-  const defaultFunds = 78000; // Nuevo saldo disponible por defecto
+export default function DebtManagement () {
+  const [fondos, setFondos] = useState(); // Nuevo saldo disponible por defecto
   const [debts, setDebts] = useState(() => JSON.parse(localStorage.getItem('debts')) || initialDebts);
   const [availableFunds, setAvailableFunds] = useState(() => {
     const storedFunds = Number(localStorage.getItem('availableFunds'));
-    return isNaN(storedFunds) ? defaultFunds : storedFunds;
+    return isNaN(storedFunds) ? fondos : storedFunds;
   });
 
   useEffect(() => {
@@ -69,6 +65,17 @@ const DebtManagement = () => {
   return (
     <div className="debt-management-container">
       <h1>Gestión de Deudas</h1>
+      <form onSubmit={fondos}>
+        <label>
+        Fondos Iniciales:
+        <input type="text" name="fondosIniciales" placeholder='Por favor ingrese sus fondos'
+          value={fondos}
+          onChange={(e)=>{setFondos(e.target.value)}}
+        />
+        </label>
+        <input type="submit" value="Submit"/>
+     </form>
+
       <p>Saldo Disponible: ${availableFunds.toLocaleString()}</p>
       <Pie {...pieConfig} />
       {debts.map((debt, index) => (
@@ -89,4 +96,3 @@ const DebtManagement = () => {
   );
 };
 
-export default DebtManagement;

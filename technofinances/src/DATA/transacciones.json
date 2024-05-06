@@ -1,0 +1,8 @@
+{
+    "initialDebts": [
+      { "tipo": "Cuentas por pagar", "valor":  0},
+      { "tipo": "Préstamos a corto plazo", "valor": 0 },
+      { "tipo": "Préstamos a largo plazo", "valor": 0 },
+      { "tipo": "Obligaciones por arrendamiento", "valor": 0 }
+    ]
+}
