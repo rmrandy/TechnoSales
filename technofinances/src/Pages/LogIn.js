@@ -23,7 +23,7 @@ export default function LogIn() {
             <div className="overlay-panel overlay-left">
               <h1>Bienvenido de Nuevo</h1>
               <p>
-                Para posder iniciar sesión coloca tu correo electronico. 
+                Para podder iniciar sesión coloca tu correo electrónico. 
               </p>
               <button
                 className="ghost"
