@@ -1,6 +1,6 @@
 # TechnoSales
-To compile it: 
-git clone https://github.com/rmrandy/TechnoSales/
-cd /tecnofinances/build/
-npm install -g serve
-serve
+To compile it: \n
+git clone https://github.com/rmrandy/TechnoSales/ \n
+cd /tecnofinances/build/ \n
+npm install -g serve \n
+serve \n
