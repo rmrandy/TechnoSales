@@ -1,55 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Facebook from "../assets/icons/Face.png";
 import Google from "../assets/icons/Google.png";
 import LinkedIn from "../assets/icons/Linked.png";
 import { useNavigate } from "react-router-dom"; 
 
-function SignInForm({ defaultEmail = "", defaultPassword = "" }) {
-  const [email, setEmail] = useState(defaultEmail);
-  const [password, setPassword] = useState(defaultPassword);
-  const navigate = useNavigate(); 
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-  });
+function SignInForm() {
 
-  const handleChange = (evt) => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value,
-    });
-  };
-  console.log(handleChange);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  // Utilizar useEffect para cargar los datos al iniciar el componente
+  useEffect(() => {
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      const { email, password } = JSON.parse(userData);
+      setEmail(email);
+      setPassword(password);
+    }
+  }, []);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    if (email === "admin@empresa.com" && password === "ADMIN123") {
-      navigate("/dash"); 
+    // Obtener los datos de autenticación almacenados en Local Storage
+    const storedData = localStorage.getItem('userData');
+    if (storedData) {
+      const { email: storedEmail, password: storedPassword } = JSON.parse(storedData);
+    
+      // Comparar los datos del formulario con los almacenados
+      if (email === storedEmail && password === storedPassword) {
+        navigate("/dash"); // Asegúrate de que la ruta '/dash' esté definida en tus rutas
+      } else {
+        alert("Credenciales incorrectas");
+      }
     } else {
-      alert("Credenciales incorrectas");
+      alert("No hay datos de usuario almacenados. Por favor, registrese primero.");
     }
   };
-
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Iniciar Sesión </h1>
+        <h1>Iniciar Sesión</h1>
         <div className="social-container">
-          <a href="https://www.facebook.com" className="social" target="_blank" rel="noopener noreferrer">
-            <img src={Facebook} alt="Facebook" />
-          </a>
-          <a href="https://www.google.com" className="social" target="_blank" rel="noopener noreferrer">
-            <img src={Google} alt="Google" />
-          </a>
-          <a href="https://www.linkedin.com" className="social" target="_blank" rel="noopener noreferrer">
-            <img src={LinkedIn} alt="LinkedIn" />
-          </a>
         </div>
-        <span>
-          También puedes iniciar sesión con tu cuenta de correo electrónico
-        </span>
+        <span>También puedes iniciar sesión con tu cuenta de correo electrónico</span>
         <input
           type="email"
           placeholder="Correo Electronico"
@@ -64,7 +59,6 @@ function SignInForm({ defaultEmail = "", defaultPassword = "" }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer">¿Olvidaste tu contraseña?</a>
         <button type="submit">Iniciar Sesión</button>
       </form>
     </div>

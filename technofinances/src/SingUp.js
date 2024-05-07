@@ -1,52 +1,42 @@
 import React from "react";
-import Facebook from "./assets/icons/Face.png"
-import Google from "./assets/icons/Google.png"
-import LinkedIn from "./assets/icons/Linked.png"
+import Facebook from "./assets/icons/Face.png";
+import Google from "./assets/icons/Google.png";
+import LinkedIn from "./assets/icons/Linked.png";
+
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
-  const handleChange = evt => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value
-    });
+
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
-  const handleOnSubmit = evt => {
+  const handleOnSubmit = (evt) => {
     evt.preventDefault();
-
     const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
-      });
-    }
+    localStorage.setItem("userData", JSON.stringify({ name, email, password }));
+    alert(`Registrado con: ${name}, email: ${email}`);
+
+    setState({
+      name: "",
+      email: "",
+      password: "",
+    });
   };
 
   return (
     <div className="form-container sign-up-container">
       <form onSubmit={handleOnSubmit}>
         <h1>Crear Cuenta</h1>
-        <div className="social-container">
-          <a href="facebook.com" className="social">
-          <img src={Facebook} alt="Facebook" />
-          </a>
-          <a href="gmail.com" className="social">
-          <img src={Google} alt="Facebook" />
-          </a>
-          <a href="linkedin.com" className="social">
-          <img src={LinkedIn} alt="Facebook" />
-          </a>
-        </div>
+        <div className="social-container"></div>
         <span>Puedes usar tu e-mail para registrarte</span>
         <input
           type="text"
@@ -69,7 +59,7 @@ function SignUpForm() {
           onChange={handleChange}
           placeholder="Contraseña"
         />
-        <button>Registrarse </button>
+        <button>Registrarse</button>
       </form>
     </div>
   );

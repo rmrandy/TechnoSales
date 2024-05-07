@@ -12,7 +12,7 @@ import Transacciones from "./Pages/Transacciones";
 function App() {
   return (
     <Router>
-      <Navbar />
+      
       <Routes>
         <Route path="/" element={<Layout><Inicio /></Layout>} />
         <Route path="/EstadoResultados" element={<Layout><DemoPie /></Layout>} />
