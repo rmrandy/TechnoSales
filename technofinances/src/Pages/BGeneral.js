@@ -1,6 +1,6 @@
 import React from "react";
 import { Pie } from "@ant-design/plots";
-import balanceData from "../DATA/balance.json";
+import data from "../DATA/balanceGeneralData.json";
 import ChatComponent from "../Componentes/ChatComponent";
 import "./BGeneral.css";
 
@@ -19,7 +19,7 @@ const FinancialReport = () => {
 
 
 
-  if (!balanceData.activos || !balanceData.pasivos) {
+  if (!data.activos || !data.pasivos) {
     return <div>Cargando...</div>;
   }
 
@@ -35,14 +35,14 @@ const FinancialReport = () => {
   return (
     <div className="financial-report-container">
       <div className="charts-container">
-        {balanceData.activos && (
+        {data.activos && (
           <div className="pie-chart" id="assets-chart">
-            <Pie {...pieConfig} data={balanceData.activos} />
+            <Pie {...pieConfig} data={data.activos} />
           </div>
         )}
-        {balanceData.pasivos && (
+        {data.pasivos && (
           <div className="pie-chart" id="liabilities-chart">
-            <Pie {...pieConfig} data={balanceData.pasivos} />
+            <Pie {...pieConfig} data={data.pasivos} />
           </div>
         )}
       </div>
@@ -61,19 +61,19 @@ const FinancialReport = () => {
                 Activos
               </td>
             </tr>
-            {renderTableRows(balanceData.activos)}
+            {renderTableRows(data.activos.value)}
             <tr>
               <td colSpan="2" className="table-section-header">
                 Pasivos
               </td>
             </tr>
-            {renderTableRows(balanceData.pasivos)}
+            {renderTableRows(data.pasivos.value)}
             <tr>
               <td colSpan="2" className="table-section-header">
                 Patrimonio
               </td>
             </tr>
-            {renderTableRows(balanceData.patrimonio)}
+            {renderTableRows(data.patrimonio.value)}
           </tbody>
         </table>
       </div>

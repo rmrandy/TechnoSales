@@ -6,7 +6,17 @@
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
-  
+ 
+.row {
+    display: flex;
+    align-items: center;
+    }
+
+    .combo-box,
+    .input-field,
+    .custom-button {
+        margin-right: 10px;
+   }
   .debt-management-container h1 {
     text-align: center; 
     color: #333; 

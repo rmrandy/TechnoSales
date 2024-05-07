@@ -4,7 +4,7 @@ import data from "../DATA/estadoResultadosData.json";
 import dataBG from "../DATA/balanceGeneralData.json";
 
 
-export default function DebtManagement () {
+export function DebtManagement () {
     let totalDebe=0;
     let totalHaber=0;
     function listAccounts(typeAccount){
@@ -18,7 +18,7 @@ export default function DebtManagement () {
 
     function handleChange(typeAccount, selectedOption, inputValue){
       typeAccount[selectedOption].value = inputValue;
-   };
+    };
     const handleInputChange = (e, setInputValue) => {
         const newValue = parseFloat(e.target.value); // Parse input value as a number
         setInputValue(newValue);
@@ -99,4 +99,6 @@ export default function DebtManagement () {
        </div>
      );
  }
+
+export default data;
 

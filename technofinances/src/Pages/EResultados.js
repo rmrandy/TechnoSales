@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './EResultados.css';
 import { Pie } from '@ant-design/plots';
 
-function EResultados() {
+export function EResultados(ingresos) {
   const [excelData] = useState([
-    { Concepto: "Ventas", Monto: 100000 }, // Considerado como ingreso
+    { Concepto: "Ventas", Monto: 0 },// Considerado como ingreso
     { Concepto: "Costo de Ventas", Monto: 15000 },
     { Concepto: "Ganancia Bruta", Monto: 85000 },
     { Concepto: "Gastos de Operación", Monto: 5000 },
@@ -20,7 +20,7 @@ function EResultados() {
     // Filtrado para obtener solo los ingresos y gastos totales
     const totalIngresos = excelData
       .filter(item => item.Concepto === "Ventas")
-      .reduce((acc, item) => acc + item.Monto, 0);
+      .reduce((acc, item) => acc + ingresos.value, 0);
 
     const totalGastos = excelData
       .filter(item => item.Concepto.includes("Gastos") || item.Concepto === "Costo de Ventas" || item.Concepto === "Impuestos")
@@ -75,6 +75,6 @@ function EResultados() {
       </div>
     </div>
   );
-}
+}Compile
 
 export default EResultados;

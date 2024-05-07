@@ -1,0 +1,27 @@
+{
+    "activos": [
+      { "name":"Bancos", "value": 0, "type":"corriente" },
+      { "name":"Caja", "value": 0, "type":"corriente" },
+      { "name":"Inventario Final", "value": 0, "type":"corriente" },
+      { "name":"Vehículos", "value": 0, "type":"noCorriente" },
+      { "name":"Inmuebles", "value": 0, "type":"noCorriente" },
+      { "name":"Depreciación Acumulada Vehiculos", "value": 0, "type":"noCorriente" },
+      { "name":"Depreciación Acumulada Inmuebles", "value": 0, "type":"noCorriente" },
+      { "name":"Gastos de Organización", "value": 0, "type":"otros" },
+      { "name":"Amortización Acumulada", "value": 0, "type":"otros" }
+    ],
+    "pasivos": [
+      { "name":"Proveedores", "value": 0, "type":"corriente" },
+      { "name":"Cuentas por Pagar", "value": 0, "type":"corriente" },
+      { "name":"ISR por Pagar", "value": 0, "type":"corriente" },
+      { "name":"Prestamos Bancarios", "value": 0, "type":"corriente" },
+      { "name":"Prestaciones Laborales", "value": 0, "type":"corriente" },
+      { "name":"Prestamos Bancarios", "value": 0, "type":"corriente" },
+      { "name":"Prestaciones Laborales", "value": 0, "type":"corriente" }
+    ],
+    "patrimonio": [
+      { "name":"Capital Social", "value": 0 },
+      { "name":"Utilidad Neta", "value": 0 }
+    ]
+  }
+  

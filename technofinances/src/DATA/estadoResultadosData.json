@@ -1,0 +1,27 @@
+{
+    "ingresos": [
+      { "name": "Ventas", "value": 0 }
+    ],
+    "costoVentas": [
+      { "name":"Inventario Inicial", "value": 0 },  
+      { "name":"Compras de Mercadería", "value": 0 },  
+      { "name":"Obligaciones por arrendamiento","value": 0 }
+    ],
+    "gastos": [
+      { "name":"Gastos de Administración", "value": 0 },  
+      { "name":"Gastos de Ventas", "value": 0 },  
+      { "name":"Sueldos de Administración", "value": 0 },  
+      { "name":"Sueldos de Venta", "value": 0 },  
+      { "name":"Prestaciones Laborales", "value": 0 },  
+      { "name":"Depreciación de Vehículos", "value": 0 },  
+      { "name":"Depreciación de Inmuebles", "value": 0 },  
+      { "name":"Amortización de Gastos de Organización", "value": 0 },  
+      { "name":"Intereses Bancarios", "value": 0 } 
+    ],
+    "utilidad": [
+      { "name":"Impuesto sobre la Renta", "value": 0 },  
+      { "name":"Utilidad Bruta", "value": 0 },  
+      { "name":"Utilidad Antes de Intereses e Impuestos", "value": 0 },  
+      { "name":"Utilidad Antes de Impuestos", "value": 0 }  
+    ]
+}
