@@ -3,8 +3,6 @@ import "./Dash.css";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 //import { Link } from 'react-router-dom';
 
-
-
 const financialStatusData = [
   { name: "Ingresos", value: 400, color: "#00C49F" },
   { name: "Gastos", value: 300, color: "#FF8042" },
@@ -26,7 +24,6 @@ const lossesData = { name: "Pérdidas", value: 12000 };
 
 const DashboardContent = () => {
   const renderPieChart = (data, title, color) => (
-    // <Link to="/EstadoResultados" >
     <div className="dashboard-card" style={{ borderColor: color }}>
       <PieChart width={200} height={200}>
         <Pie
@@ -45,11 +42,13 @@ const DashboardContent = () => {
       </PieChart>
       <h3>{title}</h3>
     </div>
-    
   );
 
   const renderFinancialSummary = (data, title, bgColor) => (
-    <div className="financial-summary-card" style={{ backgroundColor: bgColor }}>
+    <div
+      className="financial-summary-card"
+      style={{ backgroundColor: bgColor }}
+    >
       <h2>{title}</h2>
       <p>${data.value.toLocaleString()}</p>
     </div>
@@ -57,16 +56,21 @@ const DashboardContent = () => {
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
-      </div>
+      <div className="dashboard-header"></div>
       <div className="dashboard-cards">
-        {renderPieChart(financialStatusData, "Estado de Resultados", "#00C49F")}
+        <Link to="/EstadoResultados">
+          {renderPieChart(
+            financialStatusData,
+            "Estado de Resultados",
+            "#00C49F"
+          )}
+        </Link>
         {renderPieChart(balanceSheetData, "Balance General", "#0088FE")}
         {renderPieChart(debtManagementData, "Gestión de Deudas", "#FF8042")}
       </div>
       <div className="financial-summary">
-        {renderFinancialSummary(gainsData, 'Ganancias Totales', '#E9F7EF')}
-        {renderFinancialSummary(lossesData, 'Pérdidas Totales', '#FDEDEC')}
+        {renderFinancialSummary(gainsData, "Ganancias Totales", "#E9F7EF")}
+        {renderFinancialSummary(lossesData, "Pérdidas Totales", "#FDEDEC")}
       </div>
     </div>
   );
