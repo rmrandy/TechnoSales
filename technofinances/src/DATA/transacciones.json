@@ -1,8 +1,32 @@
 {
-    "initialDebts": [
-      { "tipo": "Cuentas por pagar", "valor":  0},
-      { "tipo": "Préstamos a corto plazo", "valor": 0 },
-      { "tipo": "Préstamos a largo plazo", "valor": 0 },
-      { "tipo": "Obligaciones por arrendamiento", "valor": 0 }
+    "ingresos": [
+      { "ventas":{ "name":"Ventas", "value": 0 } },
+      { "name":"Ingresos", "value": 0 }
+    ],
+    "costoVentas": [
+      { "inventarioInicial":{ "name":"Inventario Inicial", "value": 0 } },  
+      { "comprasMercaderia":{ "name":"Compras de Mercadería", "value": 0 } },  
+      { "inventarioFinal":{ "name":"Obligaciones por arrendamiento", "value": 0 } },
+      { "inventarioFinal":{ "name":"Obligaciones por arrendamiento", "value": 0 } },
+      { "name":"Costo de Ventas", "value": 0 }
+    ],
+    "gastos": [
+      { "gastosAdministracion":{ "name":"Gastos de Administración", "value": 0 } },  
+      { "gastosVentas":{ "name":"Gastos de Ventas", "value": 0 } },  
+      { "sueldosAdministracion":{ "name":"Sueldos de Administración", "value": 0 } },  
+      { "sueldosVenta":{ "name":"Sueldos de Venta", "value": 0 } },  
+      { "prestacionesLaborales":{ "name":"Prestaciones Laborales", "value": 0 } },  
+      { "depreciacionVehiculos":{ "name":"Depreciación de Vehículos", "value": 0 } },  
+      { "depreciacionInmuebles":{ "name":"Depreciación de Inmuebles", "value": 0 } },  
+      { "amortizacionGastosOrganizacion":{ "name":"Amortización de Gastos de Organización", "value": 0 } },  
+      { "interesesBancarios":{ "name":"Intereses Bancarios", "value": 0 } },  
+      { "name":"Gastos", "value": 0 }
+    ],
+    "utilidad": [
+      { "isr":{ "name":"Impuesto sobre la Renta", "value": 0 } },  
+      { "utilidadBruta":{ "name":"Utilidad Bruta", "value": 0 } },  
+      { "utilidadSinIntereses":{ "name":"Utilidad Antes de Intereses e Impuestos", "value": 0 } },  
+      { "utilidadSinImpuestos":{ "name":"Utilidad Antes de Impuestos", "value": 0 } },  
+      { "utilidadNeta":{ "name":"Utilidad Neta", "value": 0 } },  
     ]
 }
