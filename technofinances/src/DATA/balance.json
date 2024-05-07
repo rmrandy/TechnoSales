@@ -1,23 +1,35 @@
 {
     "activos": [
-      { "tipo": "Efectivo", "valor": 0},
-      { "tipo": "Cuentas por cobrar", "valor": 0 },
-      { "tipo": "Inventarios", "valor": 0 },
-      { "tipo": "Prepagos", "valor": 0 },
-      { "tipo": "Equipos", "valor": 0 },
-      { "tipo": "Edificios", "valor": 0 },
-      { "tipo": "Terrenos", "valor": 0 }
+      { "bancos":{ "name":"Bancos", "value": 0, "type":"corriente" } },
+      { "caja":{ "name":"Caja", "value": 0, "type":"corriente" } },
+      { "inventarioFinal":{ "name":"Inventario Final", "value": 0, "type":"corriente" } },
+      { "totalCorrientes":{ "name":"Total Corrientes", "value": 0 } },
+      { "vehiculos":{ "name":"Vehículos", "value": 0, "type":"noCorriente" } },
+      { "inmuebles":{ "name":"Inmuebles", "value": 0, "type":"noCorriente" } },
+      { "depreciacionAcumuladaVehiculos":{ "name":"Depreciación Acumulada Vehiculos", "value": 0, "type":"noCorriente" } },
+      { "depreciacionAcumuladaInmuables":{ "name":"Depreciación Acumulada Inmuebles", "value": 0, "type":"noCorriente" } },
+      { "totalNoCorrientes":{ "name":"Total No Corrientes", "value": 0 } },
+      { "gastosOrganizacion":{ "name":"Gastos de Organización", "value": 0, "type":"otros" } },
+      { "amortizacionAcumulada":{ "name":"Amortización Acumulada", "value": 0, "type":"otros" } },
+      { "totalOtros":{ "name":"Total Otros Activos", "value": 0 } },
+      { "name":"Activos", "value": 0 }
     ],
     "pasivos": [
-      { "tipo": "Cuentas por pagar", "valor": 0 },
-      { "tipo": "Préstamos a corto plazo", "valor": 0 },
-      { "tipo": "Préstamos a largo plazo", "valor": 0 },
-      { "tipo": "Obligaciones por arrendamiento", "valor": 0 }
+      { "proveedores":{ "name":"Proveedores", "value": 0, "type":"corriente" } },
+      { "cuentasPorPagar":{ "name":"Cuentas por Pagar", "value": 0, "type":"corriente" } },
+      { "isrPorPagar":{ "name":"ISR por Pagar", "value": 0, "type":"corriente" } },
+      { "prestamosBancarios":{ "name":"Prestamos Bancarios", "value": 0, "type":"corriente" } },
+      { "prestacionesLaborales":{ "name":"Prestaciones Laborales", "value": 0, "type":"corriente" } },
+      { "totalCorrientes":{ "name":"Total Corrientes", "value": 0 } },
+      { "prestamosBancarios":{ "name":"Prestamos Bancarios", "value": 0, "type":"corriente" } },
+      { "prestacionesLaborales":{ "name":"Prestaciones Laborales", "value": 0, "type":"corriente" } },
+      { "totalNoCorrientes":{ "name":"Total No Corrientes", "value": 0 } },
+      { "name":"Pasivos", "value": 0 }
     ],
     "patrimonio": [
-      { "tipo": "Capital emitido", "valor": 0 },
-      { "tipo": "Utilidades retenidas", "valor": 0 },
-      { "tipo": "Acciones propias", "valor": 0 }
+      { "capitalSocial":{ "name":"Capital Social", "value": 0 } },
+      { "utilidadNeta":{ "name":"Utilidad Neta", "value": 0 } },
+      { "name":"Patrimonio", "value": 0 }
     ]
   }
   

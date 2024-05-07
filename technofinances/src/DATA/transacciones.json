@@ -27,6 +27,6 @@
       { "utilidadBruta":{ "name":"Utilidad Bruta", "value": 0 } },  
       { "utilidadSinIntereses":{ "name":"Utilidad Antes de Intereses e Impuestos", "value": 0 } },  
       { "utilidadSinImpuestos":{ "name":"Utilidad Antes de Impuestos", "value": 0 } },  
-      { "utilidadNeta":{ "name":"Utilidad Neta", "value": 0 } },  
+      { "utilidadNeta":{ "name":"Utilidad Neta", "value": 0 } } 
     ]
 }
