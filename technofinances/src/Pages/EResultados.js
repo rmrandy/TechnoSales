@@ -3,8 +3,10 @@ import './EResultados.css';
 import { Pie } from '@ant-design/plots';
 
 export function EResultados(ingresos) {
+
+  
   const [excelData] = useState([
-    { Concepto: "Ventas", Monto: 0 },// Considerado como ingreso
+    { Concepto: "Ventas", Monto: 1},
     { Concepto: "Costo de Ventas", Monto: 15000 },
     { Concepto: "Ganancia Bruta", Monto: 85000 },
     { Concepto: "Gastos de Operación", Monto: 5000 },
@@ -17,7 +19,7 @@ export function EResultados(ingresos) {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    // Filtrado para obtener solo los ingresos y gastos totales
+    
     const totalIngresos = excelData
       .filter(item => item.Concepto === "Ventas")
       .reduce((acc, item) => acc + ingresos.value, 0);
@@ -41,8 +43,10 @@ export function EResultados(ingresos) {
   };
 
   if (chartData.length === 0) {
-    return <div>Cargando...</div>;  // Renderiza algo mientras los datos no están listos
+    return <div>Cargando...</div>;  
   }
+
+  
 
   return (
     <div className="financial-statement">
@@ -75,6 +79,6 @@ export function EResultados(ingresos) {
       </div>
     </div>
   );
-}Compile
+}
 
 export default EResultados;

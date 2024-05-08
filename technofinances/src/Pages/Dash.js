@@ -1,7 +1,7 @@
 import React from "react";
 import "./Dash.css";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const financialStatusData = [
   { name: "Ingresos", value: 400, color: "#00C49F" },
@@ -58,15 +58,27 @@ const DashboardContent = () => {
     <div className="dashboard-container">
       <div className="dashboard-header"></div>
       <div className="dashboard-cards">
-        <Link to="/EstadoResultados">
+        <Link to="/EstadoResultados" >
           {renderPieChart(
             financialStatusData,
             "Estado de Resultados",
             "#00C49F"
           )}
         </Link>
-        {renderPieChart(balanceSheetData, "Balance General", "#0088FE")}
-        {renderPieChart(debtManagementData, "Gestión de Deudas", "#FF8042")}
+        <Link to="/BalanceGeneral" >
+          {renderPieChart(
+            financialStatusData,
+            "Balance General",
+            "#00C49F"
+          )}
+        </Link>
+        <Link to="/Transacciones" >
+          {renderPieChart(
+            financialStatusData,
+            "Gestion de Deudas",
+            "#00C49F"
+          )}
+        </Link>
       </div>
       <div className="financial-summary">
         {renderFinancialSummary(gainsData, "Ganancias Totales", "#E9F7EF")}

@@ -1,8 +1,9 @@
 import React from "react";
 import { Pie } from "@ant-design/plots";
-import data from "../DATA/balanceGeneralData.json";
-import ChatComponent from "../Componentes/ChatComponent";
+import balanceData from "../DATA/balanceGeneralData.json";
+
 import "./BGeneral.css";
+
 
 const FinancialReport = () => {
   const pieConfig = {
@@ -10,19 +11,17 @@ const FinancialReport = () => {
     angleField: "valor",
     colorField: "tipo",
     radius: 0.9,
-    //label: {
-      //type: "none",
-      //content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
-    //},
+    label: {
+      content: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
+      
+    },
     interactions: [{ type: "element-selected" }, { type: "element-active" }],
   };
 
 
-
-  if (!data.activos || !data.pasivos) {
+  if (!balanceData.activos || !balanceData.pasivos) {
     return <div>Cargando...</div>;
   }
-
   const renderTableRows = (items) => {
     return items.map((item, index) => (
       <tr key={index}>
@@ -31,23 +30,22 @@ const FinancialReport = () => {
       </tr>
     ));
   };
-
   return (
     <div className="financial-report-container">
       <div className="charts-container">
-        {data.activos && (
+        {balanceData.activos && (
           <div className="pie-chart" id="assets-chart">
-            <Pie {...pieConfig} data={data.activos} />
+            <Pie {...pieConfig} data={balanceData.activos} />
           </div>
         )}
-        {data.pasivos && (
+        {balanceData.pasivos && (
           <div className="pie-chart" id="liabilities-chart">
-            <Pie {...pieConfig} data={data.pasivos} />
+            <Pie {...pieConfig} data={balanceData.pasivos} />
           </div>
         )}
       </div>
       <div className="financial-report-container">
-        <h1 id="resultadoFinanciero" >Resultado Financiero</h1>
+        <h1>Resultado Financiero</h1>
         <table className="financial-table">
           <thead>
             <tr>
@@ -61,25 +59,23 @@ const FinancialReport = () => {
                 Activos
               </td>
             </tr>
-            {renderTableRows(data.activos.value)}
+            {renderTableRows(balanceData.activos)}
             <tr>
               <td colSpan="2" className="table-section-header">
                 Pasivos
               </td>
             </tr>
-            {renderTableRows(data.pasivos.value)}
+            {renderTableRows(balanceData.pasivos)}
             <tr>
               <td colSpan="2" className="table-section-header">
                 Patrimonio
               </td>
             </tr>
-            {renderTableRows(data.patrimonio.value)}
+            {renderTableRows(balanceData.patrimonio)}
           </tbody>
         </table>
       </div>
-      <ChatComponent/>
     </div>
   );
 };
-
 export default FinancialReport;
