@@ -1,7 +1,4 @@
 import React from "react";
-import Facebook from "./assets/icons/Face.png";
-import Google from "./assets/icons/Google.png";
-import LinkedIn from "./assets/icons/Linked.png";
 
 function SignUpForm() {
   const [state, setState] = React.useState({

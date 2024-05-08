@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Facebook from "../assets/icons/Face.png";
-import Google from "../assets/icons/Google.png";
-import LinkedIn from "../assets/icons/Linked.png";
 import { useNavigate } from "react-router-dom"; 
 
 function SignInForm() {

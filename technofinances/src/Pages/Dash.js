@@ -8,17 +8,6 @@ const financialStatusData = [
   { name: "Gastos", value: 300, color: "#FF8042" },
 ];
 
-const balanceSheetData = [
-  { name: "Activos", value: 200, color: "#0088FE" },
-  { name: "Pasivos", value: 100, color: "#FFBB28" },
-  { name: "Patrimonio", value: 100, color: "#00C49F" },
-];
-
-const debtManagementData = [
-  { name: "Deudas", value: 38, color: "#FF8042" },
-  { name: "Ganancias", value: 62, color: "#00C49F" },
-];
-
 const gainsData = { name: "Ganancias", value: 78000 };
 const lossesData = { name: "Pérdidas", value: 12000 };
 
